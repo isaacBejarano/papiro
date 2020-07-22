@@ -171,3 +171,7 @@ html body footer #license {
   opacity: 0.7;
   mix-blend-mode: luminosity;
 }
+/* tweak --> xs button can inline flex */
+[aria-label="Search"] {
+  max-width: 14rem !important;
+}
