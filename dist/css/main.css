@@ -175,3 +175,12 @@ html body footer #license {
 [aria-label="Search"] {
   max-width: 14rem !important;
 }
+[class*="tooltip"] {
+  font-size: 1rem;
+}
+[class*="tooltip"] p {
+  margin: auto;
+}
+[class*="tooltip"] p span {
+  display: block;
+}

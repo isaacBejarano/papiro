@@ -39,6 +39,9 @@
 .bg-secondary-dark-grad {
   background-image: linear-gradient(to bottom, #002343, #001e39);
 }
+.bg-ternary-grad {
+  background-image: linear-gradient(to bottom, #5771a2, #455a81);
+}
 .text-ternary {
   color: #5771a2;
 }

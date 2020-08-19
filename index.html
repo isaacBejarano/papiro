@@ -24,9 +24,8 @@
 			crossorigin="anonymous"
 		/>
 
-    
-    <link  rel="icon"   href="dist/img/favicon.png" type="image/png" />
-    
+		<link rel="icon" href="dist/img/favicon.png" type="image/png" />
+
 		<title>Papiro</title>
 
 		<!-- custom style -->
@@ -157,7 +156,7 @@
 				</ul>
 
 				<!-- navbar 2 -->
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">				
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 					<li class="nav-item">
 						<a class="nav-link" href="dist/html/mock.html">
 							<button type="button" class="btn btn-outline-light btn-sm">
@@ -185,18 +184,26 @@
 				</ul>
 
 				<!-- search bar -->
-				<form class="form-inline my-2 my-lg-0">
+				<form action="dist/html/mock.html" method="get" id="searchbar" class="form-inline my-2 my-lg-0">
 					<input
 						class="form-control mr-2"
 						type="search"
 						placeholder="buscar título"
-            aria-label="Search"
-            disabled
+						aria-label="Search"
+						value=""
 					/>
+					<div class="valid-tooltip">
+						<p><span>Búsqueda válida</span></p>
+					</div>
+					<div class="invalid-tooltip">
+						<p>
+							<span>Introduce una palabra obligatoriamente</span>
+							<span>Ésta debe tener más de 3 carácteres</span>
+						</p>
+					</div>
 					<button
 						class="btn btn-outline-secondary my-2 my-sm-0 btn-sm py-2"
-            type="submit"
-            disabled
+						type="submit"
 					>
 						Buscar
 					</button>
@@ -600,8 +607,10 @@
 		<script src="data/recomendado.js"></script>
 		<script src="data/critica.js"></script>
 		<script src="data/leido.js"></script>
+		<script src="data/todos.js"></script>
 		<script src="dist/js/carousel.component.js"></script>
 		<script src="dist/js/goto.laie.js"></script>
+		<script src="dist/js/searchbar.js"></script>
 
 		<!-- B4 => 1.jQuery, 2.Popper.js, 3.Bootstrap JS -->
 		<script
