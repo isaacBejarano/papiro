@@ -31,7 +31,7 @@ html {
 		// navbar
 		#main-nav {
 			margin-top: 2.5rem;
-			z-index: 1020 !important;		
+			z-index: 1020 !important;
 		}
 
 		// wrapper
@@ -81,7 +81,7 @@ html {
 				}
 				/* Handle */
 				&::-webkit-scrollbar-thumb {
-          background: @ternary;
+					background: @ternary;
 					border-radius: 10px;
 				}
 				/* Handle on hover */
@@ -141,5 +141,15 @@ html {
 
 /* tweak --> xs button can inline flex */
 [aria-label="Search"] {
-  max-width: 14rem !important;
+	max-width: 14rem !important;
+}
+
+[class*="tooltip"] {
+	font-size: 1rem;
+	p {
+		margin: auto;
+		span {
+			display: block;
+		}
+	}
 }
