@@ -157,26 +157,34 @@
 
 				<!-- navbar 2 -->
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="dist/html/mock.html">
+					<!-- login -->
+					<li id="login" class="nav-item">
+						<a class="nav-link" href="dist/html/login.html">
 							<button type="button" class="btn btn-outline-light btn-sm">
 								<i class="fas fa-sign-in-alt px-1"></i>
-								Iniciar Sesión
-							</button>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="dist/html/mock.html">
-							<button type="button" class="btn btn-outline-light btn-sm">
+								Abrir
+								<span>/</span>
 								<i class="fas fa-sign-out-alt px-1"></i>
 								Cerrar Sesión
 							</button>
 						</a>
 					</li>
 
+					<!-- signin -->
+					<li id="signin" class="nav-item">
+						<a class="nav-link" href="dist/html/signup.html">
+							<button type="button" class="btn btn-outline-info btn-sm">
+								<i class="fas fa-hand-point-right px-1"></i>
+								Regístrate!
+							</button>
+						</a>
+					</li>
+
+					<!-- premium -->
 					<li class="nav-item">
 						<a class="nav-link" href="dist/html/mock.html">
 							<button type="button" class="btn btn-outline-warning btn-sm">
+								<i class="fas fa-award px-1"></i>
 								Hazte Premium!
 							</button>
 						</a>
@@ -184,17 +192,23 @@
 				</ul>
 
 				<!-- search bar -->
-				<form action="dist/html/mock.html" method="get" id="searchbar" class="form-inline my-2 my-lg-0">
+				<form
+					action="#"
+					method="get"
+					id="searchbar"
+					class="form-inline my-2 my-lg-0"
+					novalidate
+				>
 					<input
+						id="searchbarInput"
 						class="form-control mr-2"
 						type="search"
 						placeholder="buscar título"
 						aria-label="Search"
 						value=""
+						autofocus
 					/>
-					<div class="valid-tooltip">
-						<p><span>Búsqueda válida</span></p>
-					</div>
+					<div class="valid-tooltip p-0"></div>
 					<div class="invalid-tooltip">
 						<p>
 							<span>Introduce una palabra obligatoriamente</span>

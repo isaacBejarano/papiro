@@ -3,7 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Papiro</title>
+
+		<!-- favicon -->
+		<link rel="icon" href="../img/favicon.png" type="image/png" />
+
 		<!-- Bootstrap CSS. Make sure it is v.4.4^ / .container-{breakpoint}  -->
 		<link
 			rel="stylesheet"
@@ -150,26 +154,34 @@
 
 				<!-- navbar 2 -->
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="../html/mock.html">
+					<!-- login -->
+					<li id="login" class="nav-item">
+						<a class="nav-link" href="login.html">
 							<button type="button" class="btn btn-outline-light btn-sm">
 								<i class="fas fa-sign-in-alt px-1"></i>
-								Iniciar Sesión
-							</button>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../html/mock.html">
-							<button type="button" class="btn btn-outline-light btn-sm">
+								Abrir
+								<span>/</span>
 								<i class="fas fa-sign-out-alt px-1"></i>
 								Cerrar Sesión
 							</button>
 						</a>
 					</li>
 
+					<!-- signin -->
+					<li id="signin" class="nav-item">
+						<a class="nav-link" href="signup.html">
+							<button type="button" class="btn btn-outline-info btn-sm">
+								<i class="fas fa-hand-point-right px-1"></i>
+								Regístrate!
+							</button>
+						</a>
+					</li>
+
+					<!-- premium -->
 					<li class="nav-item">
-						<a class="nav-link" href="../html/mock.html">
+						<a class="nav-link" href="mock.html">
 							<button type="button" class="btn btn-outline-warning btn-sm">
+								<i class="fas fa-award px-1"></i>
 								Hazte Premium!
 							</button>
 						</a>
@@ -177,18 +189,32 @@
 				</ul>
 
 				<!-- search bar -->
-				<form class="form-inline my-2 my-lg-0">
-					<input
-						class="form-control mr-sm-2"
+				<form
+					action="javascript:void(0)"
+					method="get"
+					id="searchbar"
+					class="form-inline my-2 my-lg-0"
+					novalidate
+				>
+          <input
+          id="searchbarInput"
+						class="form-control mr-2"
 						type="search"
 						placeholder="buscar título"
 						aria-label="Search"
-						disabled
+						value=""
+						autofocus
 					/>
+					<div class="valid-tooltip p-0"></div>
+					<div class="invalid-tooltip">
+						<p>
+							<span>Introduce una palabra obligatoriamente</span>
+							<span>Ésta debe tener más de 3 carácteres</span>
+						</p>
+					</div>
 					<button
 						class="btn btn-outline-secondary my-2 my-sm-0 btn-sm py-2"
 						type="submit"
-						disabled
 					>
 						Buscar
 					</button>
@@ -243,6 +269,7 @@
 		<script src="../../data/todos.js"></script>
 		<script src="../js/ebook.details.js"></script>
 		<script src="../js/goto.laie.js"></script>
+		<script src="../js/searchbar.js"></script>
 
 		<!-- B4 => 1.jQuery, 2.Popper.js, 3.Bootstrap JS -->
 		<script

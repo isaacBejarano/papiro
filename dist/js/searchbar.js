@@ -1,14 +1,13 @@
-// REFERENCES
-// 1. <#searchbar><input>
-let searchbarInput = document.querySelector("#searchbar input");
-// 2. <#searchbar> --direct DOM ref by id (no querySelector required)
+// DOM refs
+// 1. <form #searchbar>
+// 2. <form #searchbar><input>
 
 // LISTENERS
-searchbarInput.addEventListener("input", validateSearchbarStyle); // useCapture bubble default
-searchbar.addEventListener("submit", validateSearchbarLogic); // useCapture bubble default
+searchbar.addEventListener("submit", validateSearchbarLogic); // useCapture bubble
+searchbarInput.addEventListener("input", validateSearchbarInputStyle); // useCapture bubble
 
 // VALIDATION --style
-function validateSearchbarStyle() {
+function validateSearchbarInputStyle() {
 	searchbarInput.value.length <= 3
 		? (searchbarInput.classList.remove("is-valid"),
 		  searchbarInput.classList.add("is-invalid"))
@@ -22,7 +21,9 @@ function validateSearchbarLogic(e) {
 		? (e.stopPropagation(),
 		  e.preventDefault(),
 		  searchbarInput.classList.add("is-invalid"))
-		: true; // * send value as request to API REST (to be implemented)
+		: (alert(
+				'Funcionalidad "Buscar Título" en desarrollo. \nDisponible próximamente ;)'
+		  ),
+		  searchbarInput.classList.remove("is-valid"),
+		  (searchbarInput.value = ""));
 }
-
-
