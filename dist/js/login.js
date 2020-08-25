@@ -2,6 +2,7 @@
 // 1. <form #loginform>
 // 2. <input #email>
 // 3. <input #password>
+// 4. <div #eye>
 
 /* GLOBALS */
 const regexEmail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
@@ -10,30 +11,21 @@ let eyeState = false; // eye state
 
 /* LISTENERS */
 loginform.addEventListener("submit", validateFormSubmit); // --logic
-email.addEventListener("blur", validateEmail); // --style
-password.addEventListener("blur", validatePassword); // --style
+email.addEventListener("blur", () => validateEmail(email)); // --style
+password.addEventListener("blur", () => validatePassword(password)); // --style
 eye.addEventListener("click", showPassword); // --utility
 
 /* VALIDATION --style */
 
 // <input #email>
-function validateEmail() {
-	// compulsory
-	email.value.length === 0
-		? (email.classList.remove("is-valid"), email.classList.add("is-invalid"))
-		: email.classList.remove("is-invalid");
-
+function validateEmail(ref) {
+	toolipInput(ref, ref.value.length === 0); // compulsory
 	testRegex(regexEmail, email); // RegExp email format
 }
 
 // <input #password>
-function validatePassword() {
-	// compulsory
-	password.value.length === 0
-		? (password.classList.remove("is-valid"),
-		  password.classList.add("is-invalid"))
-		: password.classList.remove("is-invalid");
-
+function validatePassword(ref) {
+	toolipInput(ref, ref.value.length === 0); // compulsory
 	testRegex(regexPassword, password); // RegExp password length
 }
 
@@ -41,9 +33,10 @@ function validatePassword() {
 
 // <form #loginform>
 function validateFormSubmit(e) {
-	validateEmail(); // <input #email> --style
-	validatePassword(); // <input #password> --style
+	validateEmail(email); // <input #email> --style
+	validatePassword(password); // <input #password> --style
 
+	// --logic
 	email.value.length === 0 ||
 	password.value.length === 0 ||
 	!regexEmail.test(email.value) ||
@@ -54,7 +47,9 @@ function validateFormSubmit(e) {
 		  true);
 }
 
-/* UTILITY --show password (eye) */
+/* UTILITY */
+
+// <div #eye>
 function showPassword() {
 	let eyeOpen = document.querySelector("#eye span i:nth-child(1)");
 	let eyeClosed = document.querySelector("#eye span i:nth-child(2)");
@@ -66,14 +61,22 @@ function showPassword() {
 		: eyeToggle(eyeOpen, eyeClosed, "password");
 }
 
-// utility --aux
+/* AUXILIARY */
+
+// --utility
 function eyeToggle(eye1, eye2, type) {
 	eye1.classList.remove("hide-eye");
 	eye2.classList.add("hide-eye");
 	password.type = type; // <input #password>
 }
 
-// validation --stye --aux
+// --validation --stye
+function toolipInput(ref, condition) {
+	condition
+		? (ref.classList.remove("is-valid"), ref.classList.add("is-invalid"))
+		: ref.classList.remove("is-invalid");
+}
+
 function testRegex(regex, element) {
 	regex.test(element.value)
 		? ($(`#${element.id}`).tooltip("disable"),

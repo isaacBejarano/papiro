@@ -1,15 +1,47 @@
-main div.btn {
-	margin: 40px 0 50px;
+@import "global.less";
+
+main {
+	max-width: 576px;
 }
-main div.btn a {
+.input-group-text,
+.invalid-tooltip,
+.valid-tooltip {
+	font-size: 0.8rem;
+	@media (min-width: 576px) {
+		font-size: initial;
+	}
+}
+div.btn {
+	margin: 3rem auto 1rem;
+	display: block;
+}
+div.btn a {
 	text-decoration: none;
-	color: #002343;
-	background-color: wheat;
+	color: @primary;
+	background-color: @papiro3;
 	padding: 10px;
-	border: 1px solid #002343;
+	border: 1px solid @secondary;
 	border-radius: 15px;
 }
-main div.btn a:hover {
-	color: #5771a2;
-	background-color: beige;
+div.btn a:hover {
+	color: @ternary;
+	background-color: @papiro1;
+}
+#eye1,
+#eye2 {
+	cursor: pointer;
+	span {
+		&:hover {
+			color: @secondary;
+			background-color: @primary;
+		}
+		&:active {
+			color: @papiro3;
+		}
+	}
+}
+
+// dynamic
+.hide-eye {
+	display: none;
 }
