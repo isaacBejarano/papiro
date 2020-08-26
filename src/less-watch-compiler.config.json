@@ -2,5 +2,5 @@
 	"minified": false,
 	"watchFolder": "less",
 	"outputFolder": "../dist/css",
-	"mainFile": "signup.less"
+	"mainFile": "main.less"
 }
